@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <title>Tables and Forms</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"><!--This sets up the file for mobile use--> 
+        <meta name="description" content="A demonstration in coding tables and forms">
+        <link rel="stylesheet" href="css/normalize.css">
+
+        <style> /* This is where CSS goes */
+            {outline:1px solid red;}
+
+            /* BOX SIZING -- ignores border and padding when measuring width */
+            html {
+            box-sizing: border-box;
+            }
+            *, *:before, *:after {
+            box-sizing:inherit;
+            }
+
+            /* STRUCTURE */ 
+            #wrap {width:100%; max-width:1000px;margin:0 auto;} 
+            #table {background-color:#ccc4f7; padding:20px 40px 60px 40px; }
+            #form {background-color:beige; padding:20px 40px 60px 40px; }
+
+             /* TYPOGRAPHY */
+             h1{text-align: center;}
+
+            /* TABLE */
+            table {width:100%;text-align:left; border-spacing:0; border-collapse:separate;}
+            th, td {padding: 6px;} 
+            th {background-color:#ddd;} 
+            tbody th {background-color:beige;}
+            th:nth-child(1) {width:5%;}
+            th:nth-child(2) {width:10%;} 
+            th:nth-child(5) {width: 15%;} 
+            tfoot td {color:white; background-color:black;} 
+            th:nth-child(5), td:nth-child(5) {text-align:right;} 
+            tbody tr:nth-child(odd) {background-color:yellow;}
+            tbody tr:nth-child(even) {background-color:orange;} 
+
+            /* TABLE TYPOGRAPHY */
+            tfoot {font-size:12px;}
+
+            /* FORM */
+           input, select, textarea, button {display:block; margin-bottom:6px; padding:3px;} 
+           input[type=text], input[type=email],select, textarea {width:100%; max-width: 400px;}
+           input[type=radio]{display:inline;}
+
+            /*TYPOGRAPHY */ 
+            #form p {margin-bottom:3px;}
+            #radio {margin-bottom:20px;}
+
+            /* FORM BUTTONS */ 
+            button {width:100px; border-radius: 6px;}
+            button, button:visited {margin-top:20px; background-color:red; color:white; font-weight:bold;border:0;}
+            button:hover, button:focus, button:active {background-color:aqua; color:black;}
+
+            button[type=reset], button[type=reset]:visited {background-color:darkkhaki;font-weight: bold; border:0;}
+            button[type=reset]:hover, button[type=reset]:focus, button[type=reset]:active {background-color: #999;color:white;}
+           
+        </style>
+    </head>
+
+<body>
+    <h1>Tables and Forms</h1>
+    <div id="wrap">
+
+        <section id="table">
+            <h2>Table</h2>
+            <table>          
+                <thead>
+                     <tr>
+                        <td>&nbsp;</td>
+                        <th scope="col">Age</th> 
+                        <th scope="col">First Name</th> 
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Grade Point</th>
+                     </tr> 
+                </thead>
+                <tbody>
+                    <tr> 
+                        <th scope="row">#1</th>
+                        <td>32</td>
+                        <td> John</td>
+                        <td>Glenn</td>
+                        <td>3.04</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">#2</th>
+                        <td>28</td>
+                        <td>Gus</td>
+                        <td>Grissom</td>
+                        <td>3.28</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">#3</th>
+                        <td>36</td>
+                        <td>Sally</td>
+                        <td>Ride</td>
+                        <td>4.00</td>
+                    </tr>
+                    <tr> 
+                        <th scope="row">#4</th>
+                        <td>35</td>
+                        <td>William</td>
+                        <td>Shepard</td>
+                        <td>3.96</td>
+                    </tr>
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">©2024 All Rights Reserved</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+
+        <section id="form">
+            <h2>Form</h2>
+            <h3>Contact Us:</h3>
+            <form action="mailto:kmushong@montgomerycollege.edu" method="post"enctype="text/plain">
+                <!-- NAME --> 
+                <input type="text" name="firstname" required autofocus placeholder="First Name*">
+                <input type="text" name="lastname" required placeholder="Last Name*">
+
+                <!-- EMAIL -->
+                <input type="email" name="email" required placeholder="Email*">
+                
+                <div id="radio">
+                <!-- RADIO BUTTONS -->
+                    <p>Favorite web language:</p>
+                    <input type="radio" id="html" name="language" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="radio" id="css" name="language" value="CSS">
+                    <label for="css">CSS</label><br> 
+                    <input type="radio" id="javascript" name="language" value="javascript">
+                    <label for="javascript">javascript</label><br>
+                </div>
+                
+                <!-- reason for email -->
+                <select name="reason"> <option value="instruction">I'm looking for instruction</option>
+                <option value="newsletter">I'd like to receive your newsletter</option>
+                <option value="other">Other reason</option>
+                <option value="web">There's an error on your website</option>
+                </select> 
+                
+                <!-- COMMENT -->
+                <textarea name="comment" cols="45" rows="4" placeholder="Comments"></textarea>
+
+                <!-- BUTTONS -->
+                <button type="submit" value="Submit">Submit</button>
+                <button type="reset" value="Reset">Reset</button>
+            </form>
+        </section>
+    </div> <!-- close WRAP-->
+</body>
+</html>
