@@ -9,6 +9,65 @@
         <style>
             {outline:1px solid red;}
             img {max-width: 200px; }
+
+             /* BOX SIZING -- ignores border and padding when measuring width */
+             html{
+                box-sizing: border-box;
+                }
+                *, *:before, *:after {
+                box-sizing: inherit;
+                }
+
+                /* STRUCTURE */
+                body {background-color:#555;}
+                #wrap {width: 100%;
+                    max-width: 800px; 
+                    background-color :#ddd;
+                    margin:0 auto;} 
+                    header, footer {background-color:#444; color:white;}
+                    header, section, footer {padding:20px 60px;}
+                
+                /* IMAGES */
+                figure {margin:0;}
+                img {width:100%; max-width:300px; margin-bottom:10px;}
+                
+                /* TYPOGRAPHY */ 
+                html {font-family:sans-serif;} 
+                h1 {font-size:42px;} 
+                h3 {font-size:32px;}
+                h4 {font-size:24px;}
+                h5 {font-size:20px;} 
+                h3, h4, h5 {margin-bottom:6px;}
+                p {margin-top:0;} 
+                figcaption {font-size:14px; font-style:italic; margin-bottom: 16px;} 
+                ul {padding-left:16px;}
+                li {margin-bottom: 6px;}
+
+                /* NAV TYPE */
+                nav ul {padding-left:0;}
+                nav li {list-style:none; display:inline-block; 
+                margin-right:12px;}
+
+                /* LINKS */ 
+                a:link {color:#aaa; text-decoration:none;} 
+                a:visited {color:#aaa;}
+                a:hover {color:aqua;} 
+                a:focus {color:aqua;}
+                a:active {color:aqua;} 
+
+                section a:link {color:#666;} 
+                section a:visited {color:#666;} 
+                section a:hover {color:red;} 
+                section a:focus {color:red;}
+                section a:active {color:red;} 
+                
+                nav a:link {color:white; background-color:red; 
+                padding:6px; border-radius:3px; } 
+                nav a:visited {color:white; background-color:red;} 
+                nav a:hover {color:white; background-color:#777;} 
+                nav a:focus {color:white; background-color:#777;}
+                nav a:active {color:white; 
+                background-color:#777;}
         </style>
     </head>
     <body> 
