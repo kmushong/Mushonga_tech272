@@ -8,6 +8,12 @@
     *, *:before, *:after {
     box-sizing: inherit;
     }
+/* Fixing Float Containers */
+    .clearfix::after {
+      content:""; 
+      clear: both; 
+      display: table;
+      }
 
  /* STRUCTURE */
  body {background-color:#555;}
@@ -16,18 +22,26 @@
      background-color :#ddd;
      margin:0 auto;} 
      header, footer {background-color:#444; color:white;}
-     header, section, footer {padding:20px 60px;}
+
+     header, section, footer {padding:10px 30px;}
      figure {margin:0;}
 
+     @media screen and (min-width: 480px) {
+      header,section, footer {padding:20px
+      60px;}
+      }
+
  /* FLOATS*/
-    .clearfix::after {
-    content:""; 
-    clear: both; 
-    display: table;
-    }
-    .fr300 {width:100%; max-width: 300px; float: right; margin-left:20px; margin-bottom:20px;}
-    .fr200 {width:100%; max-width:200px; float:right; margin-left:20px; margin-bottom:20px;}
-    .fl200 {width:100%; max-width:200px; float:right; margin-left:20px; margin-bottom:20px;}
+   .fr300 {width:100%; margin-left:20px; margin:0px;}
+   @media screen and (min-width: 480px) {
+   .fr300 {width:100%; max-width: 200px; 
+   float: right; margin-left:30px; margin-bottom:20px;}
+   }
+
+   @media (min-width: 640px) {
+   .fr300 {width:100%; max-width: 300px; 
+   float: right; margin-left:30px;}
+   }
 
  /* IMAGES */
     figure {margin:0;}
